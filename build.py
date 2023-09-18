@@ -100,7 +100,7 @@ def build(args):
     if not cmake_toolchain_file.exists():
         raise ValueError('no such file or directory: {}'.format(cmake_toolchain_file))
         
-    command = ['/data/data/com.termux/files/home/opt/android-sdk/cmake/bin/cmake', '-GNinja', 
+    command = ['cmake', '-GNinja', 
         '-B {}'.format(args.build),
         '-DANDROID_NDK={}'.format(args.ndk),
         '-DCMAKE_TOOLCHAIN_FILE={}'.format(cmake_toolchain_file),
